@@ -1,0 +1,28 @@
+
+
+* build an app
+
+** loaded: true
+
+   flag to determine if the data is loaded, or if your app needs to
+   think about things for a while, it doesn't look like your app is
+   hung up. (Could show a spinner, etc.)
+
+** React.DOM
+
+   React creates raw DOM, which you can call directly.
+   [[https://www.dropbox.com/s/dwj1z1qoevyru3h/Screen%2520Shot%25202015-02-13%2520at%25209.30.14%2520AM.png?dl%3D0][https://www.dropbox.com/s/dwj1z1qoevyru3h/Screen%20Shot%202015-02-13%20at%209.30.14%20AM.png?dl=0]]
+
+   These are equivalent:
+   https://www.dropbox.com/s/dwj1z1qoevyru3h/Screen%20Shot%202015-02-13%20at%209.30.14%20AM.png?dl=0
+
+   Most people who think of ReactJS as a platform are using the DOM
+   functions. Otherwise, and probably easier, is to use JSX
+   transpiler.
+
+
+** JSX
+   
+** Calling a React App
+   https://www.dropbox.com/s/pw3hnirak5jorfq/Screen%20Shot%202015-02-13%20at%209.34.56%20AM.png?dl=0
+
