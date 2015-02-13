@@ -20,7 +20,7 @@ var emailType = (props, propName, componentName) => {
 var sizeType = (props, propName, componentName) => {
   warning(
     !isNaN(parseInt(props[propName])),
-    `Invalid prop "${propName}", can't convert "${props[propName]}" to number. Check the render method of "${componentName}".`
+    `Invalid prop "${propName}", can\'t convert "${props[propName]}" to number. Check the render method of "${componentName}".`
   );
 };
 

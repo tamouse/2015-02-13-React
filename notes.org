@@ -26,3 +26,57 @@
 ** Calling a React App
    https://www.dropbox.com/s/pw3hnirak5jorfq/Screen%20Shot%202015-02-13%20at%209.34.56%20AM.png?dl=0
 
+
+* props
+
+  `getDefaultProps` is only called *once* -- can't do
+  calculations. They are default properties for *every* instance.
+
+* events and state
+
+** events
+
+  There are events in ReactJS
+
+  https://www.dropbox.com/s/3hyx5gclcrlz54i/Screen%20Shot%202015-02-13%20at%2011.16.01%20AM.png?dl=0
+
+  #+begin_src html
+    <button onClick={alertStuff.bind(this,'hi')}>hi</button>
+  #+end_src
+  
+  In a React app, you have access to the normal set of javascript DOM
+  events, simply by writing them as you would in HTML (camelCase).
+
+  #+begin_src javascript
+    var App = React.createClass({
+      render () {
+        return (
+            <div><button onClick={someThing.bind(this.'hi')}>hi</button></div>
+        )
+      }
+    })
+  #+end_src
+  
+*** BUT...
+    
+    You have to use DOM properties, not html attributes
+
+    #+begin_src javascript
+      return (
+          <div className="content">
+          blah blah
+          </div>
+      );
+    #+end_src
+
+** State
+   
+   Only have to think about state RIGHT NOW. Don't have worry about it
+   over time. 
+
+   Some interesting toggle thing.
+
+   Centralizes state. 
+
+   something about performant rendering -- i didn't get
+   this... [2015-02-13 Fri 11:35]
