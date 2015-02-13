@@ -124,3 +124,10 @@
 ** CONSIDER: ReactJS is a *functional* programming paradigm.
    It uses objects/prototypes, etc. But program design and
    construction follows much more of a functional paradigm.
+
+* flux
+
+  http://facebook.github.io/flux/docs/overview.html
+
+  Not necessarily so great for the initial dev, but great for devs a
+  month in looking at it. So: it's organizational.

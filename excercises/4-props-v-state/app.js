@@ -32,9 +32,13 @@ var Tabs = React.createClass({
   //   this.setState({ activeTabIndex });
   // },
 
+  handleTabClick (activeTabIndex) {
+    this.props.onActivateTab(activeTabIndex);
+  },
+
   renderTabs () {
     return this.props.data.map((tab, index) => {
-      var style = this.state.activeTabIndex === index ?
+      var style = this.props.activeTabIndex === index ?
         styles.activeTab : styles.tab;
       var clickHandler = this.handleTabClick.bind(this, index);
       return (
@@ -46,7 +50,7 @@ var Tabs = React.createClass({
   },
 
   renderPanel () {
-    var tab = this.props.data[this.state.activeTabIndex];
+    var tab = this.props.data[this.props.activeTabIndex];
     return (
       <div>
         <p>{tab.description}</p>
@@ -74,7 +78,6 @@ var App = React.createClass({
 
   getInitialState () {
     return {
-      // insert your state object here
       activeTabIndex: 0
     };
   },
