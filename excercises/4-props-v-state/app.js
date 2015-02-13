@@ -16,19 +16,21 @@ var data = require('./data');
 
 var Tabs = React.createClass({
 
-  propTypes: {
-    data: React.PropTypes.array.isRequired
-  },
+  // Get rid of Tabs's state handling
+  //
+  // propTypes: {
+  //   data: React.PropTypes.array.isRequired
+  // },
 
-  getInitialState () {
-    return {
-      activeTabIndex: 0
-    };
-  },
+  // getInitialState () {
+  //   return {
+  //     activeTabIndex: 0
+  //   };
+  // },
 
-  handleTabClick (activeTabIndex) {
-    this.setState({ activeTabIndex });
-  },
+  // handleTabClick (activeTabIndex) {
+  //   this.setState({ activeTabIndex });
+  // },
 
   renderTabs () {
     return this.props.data.map((tab, index) => {
@@ -67,11 +69,29 @@ var Tabs = React.createClass({
 });
 
 var App = React.createClass({
+
+  // Add application state handling instead
+
+  getInitialState () {
+    return {
+      // insert your state object here
+      activeTabIndex: 0
+    };
+  },
+  
+  handleActivateTab (activeTabIndex) {
+    this.setState({ activeTabIndex })
+  },
+
   render () {
     return (
       <div>
         <h1>Props v. State</h1>
-        <Tabs data={this.props.tabs}/>
+        <Tabs
+      data={this.props.tabs}
+      activeTabIndex={this.state.activeTabIndex}
+      onActivateTab={this.handleActivateTab}
+        />
       </div>
     );
   }
