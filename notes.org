@@ -75,8 +75,52 @@
    over time. 
 
    Some interesting toggle thing.
+   
+   #+begin_src javascript
+     var ContentToggle = React.createClass({
+
+       // built-in - called at the beginning of instance.
+       getInitialState: function() {
+         return {
+           showDetails: false
+         };
+       },
+
+       // toggles the state of showing the details
+       toggle: function() {
+         this.setState({
+           showDetails: !this.state.showDetails
+         }, this.maybeFocus);
+       },
+
+       // ...
+
+       // this uses the toggle
+       handleKeyboard: function(event) {
+         if (event.key === 'Enter' || event.key === ' ')
+           this.toggle();
+       },
+
+     })  
+   #+end_src
+   
 
    Centralizes state. 
 
    something about performant rendering -- i didn't get
    this... [2015-02-13 Fri 11:35]
+
+* props vs. state
+
+** idiom: state moves up
+
+   Some apps / frameworks move it all the way to the top, so all state
+   is held at the very highest level.
+
+   see http://circleci.com - using Om, a clojurescript framework that
+   also includes reactjs.
+
+   
+** CONSIDER: ReactJS is a *functional* programming paradigm.
+   It uses objects/prototypes, etc. But program design and
+   construction follows much more of a functional paradigm.
